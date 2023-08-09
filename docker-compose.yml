@@ -1,0 +1,31 @@
+version: "3"
+services:
+  db:
+    image: postgres:14.3
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    container_name: docservice-db
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+
+  
+
+  web:
+    build:
+        context: .  
+        dockerfile: Dockerfile  
+    image: docservice:latest  
+    container_name: docservice-app
+    restart: always
+    ports:
+      - "8000:8000"  
+    environment:
+      DEBUG: "True"  
+      DATABASE_URL: postgresql://postgres:${DB_PASS}@db:5432/${DB_NAME}
+    volumes:
+      - ./static:/app/static  
+      - ./media:/app/media    

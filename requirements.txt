@@ -1,0 +1,12 @@
+fastapi
+sqlalchemy
+psycopg2-binary
+python-dotenv
+asgiref
+uvicorn
+fastapi-camelcase
+pydantic
+pyhumps
+loguru
+fastapi-sqlalchemy
+aiokafka

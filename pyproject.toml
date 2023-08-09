@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "docservicetest"
+version = "0.1.0"
+description = ""
+authors = ["Julián Zúñiga <julian.zuniga1@mail.udp.cl>"]
+readme = "README.md"
+packages = [{include = "docservicetest"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+asgiref = "3.7.2"
+psycopg2-binary = "2.9.6"
+sqlparse = "0.4.4"
+python-dotenv = "^1.0.0"
+fastapi = "^0.101.0"
+sqlalchemy = "^2.0.19"
+uvicorn = "^0.23.2"
+fastapi-camelcase = "^1.0.5"
+pydantic = "^2.1.1"
+pyhumps = "^3.8.0"
+loguru = "^0.7.0"
+fastapi-sqlalchemy = "^0.2.1"
+aiokafka = "^0.8.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
